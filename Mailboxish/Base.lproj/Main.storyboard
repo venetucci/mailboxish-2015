@@ -21,7 +21,7 @@
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <subviews>
                                             <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="feed" id="MZs-xl-omr">
-                                                <rect key="frame" x="0.0" y="175" width="320" height="1202"/>
+                                                <rect key="frame" x="0.0" y="185" width="320" height="1202"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                             </imageView>
                                             <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="help_label" id="Yeh-fH-cOn">
@@ -32,18 +32,18 @@
                                                 <rect key="frame" x="0.0" y="0.0" width="320" height="65"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                             </imageView>
+                                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="archive_icon" id="ZoV-ZU-arr">
+                                                <rect key="frame" x="17" y="130" width="25" height="25"/>
+                                                <autoresizingMask key="autoresizingMask"/>
+                                            </imageView>
+                                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="later_icon" id="b3r-E7-qLu">
+                                                <rect key="frame" x="278" y="130" width="25" height="25"/>
+                                                <autoresizingMask key="autoresizingMask"/>
+                                            </imageView>
                                             <view contentMode="scaleToFill" id="24m-66-XOG">
                                                 <rect key="frame" x="0.0" y="98" width="320" height="80"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <subviews>
-                                                    <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="later_icon" id="ZoV-ZU-arr">
-                                                        <rect key="frame" x="167" y="51" width="25" height="25"/>
-                                                        <autoresizingMask key="autoresizingMask"/>
-                                                    </imageView>
-                                                    <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="archive_icon" id="b3r-E7-qLu">
-                                                        <rect key="frame" x="167" y="51" width="25" height="25"/>
-                                                        <autoresizingMask key="autoresizingMask"/>
-                                                    </imageView>
                                                     <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="message" id="TBP-8d-N6c">
                                                         <rect key="frame" x="0.0" y="0.0" width="320" height="86"/>
                                                         <autoresizingMask key="autoresizingMask"/>
@@ -56,6 +56,7 @@
                                                 </connections>
                                             </view>
                                         </subviews>
+                                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                         <gestureRecognizers/>
                                     </scrollView>
                                 </subviews>
@@ -65,8 +66,11 @@
                     </view>
                     <connections>
                         <outlet property="imageFeed" destination="MZs-xl-omr" id="C2o-U8-ouj"/>
+                        <outlet property="leftIconImageView" destination="ZoV-ZU-arr" id="TfX-SG-cNm"/>
+                        <outlet property="rightIconImageView" destination="b3r-E7-qLu" id="vRA-e4-XSZ"/>
                         <outlet property="scrollView" destination="DP0-gi-rbX" id="0Vk-fr-y6W"/>
                         <outlet property="singleMessageView" destination="24m-66-XOG" id="Yyq-zl-t7w"/>
+                        <segue destination="CwR-Pq-zKq" kind="modal" identifier="rescheduleSegue" modalTransitionStyle="crossDissolve" id="Yct-po-cPm"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
@@ -78,6 +82,26 @@
             </objects>
             <point key="canvasLocation" x="162" y="366"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="LYg-PN-Xy4">
+            <objects>
+                <viewController id="CwR-Pq-zKq" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8MN-YR-oUj">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="reschedule" id="rXo-GM-koJ">
+                                <rect key="frame" x="0.0" y="-1" width="320" height="568"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ROp-5d-dcd" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="563" y="366"/>
+        </scene>
     </scenes>
     <resources>
         <image name="archive_icon" width="25" height="25"/>
@@ -86,6 +110,7 @@
         <image name="later_icon" width="25" height="25"/>
         <image name="message" width="320" height="86"/>
         <image name="nav" width="320" height="65"/>
+        <image name="reschedule" width="320" height="568"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
