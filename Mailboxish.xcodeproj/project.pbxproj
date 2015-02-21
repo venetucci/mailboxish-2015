@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		106D1BF51A9919CF002A09CC /* RescheduleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 106D1BF41A9919CF002A09CC /* RescheduleViewController.swift */; };
 		10A537F81A966B1E00FC75C3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10A537F71A966B1E00FC75C3 /* AppDelegate.swift */; };
 		10A537FA1A966B1E00FC75C3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10A537F91A966B1E00FC75C3 /* ViewController.swift */; };
 		10A537FD1A966B1E00FC75C3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 10A537FB1A966B1E00FC75C3 /* Main.storyboard */; };
@@ -27,6 +28,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		106D1BF41A9919CF002A09CC /* RescheduleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RescheduleViewController.swift; sourceTree = "<group>"; };
 		10A537F21A966B1E00FC75C3 /* Mailboxish.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Mailboxish.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		10A537F61A966B1E00FC75C3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		10A537F71A966B1E00FC75C3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -82,6 +84,7 @@
 				10A537F71A966B1E00FC75C3 /* AppDelegate.swift */,
 				10A537F91A966B1E00FC75C3 /* ViewController.swift */,
 				10A537FB1A966B1E00FC75C3 /* Main.storyboard */,
+				106D1BF41A9919CF002A09CC /* RescheduleViewController.swift */,
 				10A538171A966B8D00FC75C3 /* MailboxViewController.swift */,
 				10A537FE1A966B1E00FC75C3 /* Images.xcassets */,
 				10A538001A966B1E00FC75C3 /* LaunchScreen.xib */,
@@ -215,6 +218,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				106D1BF51A9919CF002A09CC /* RescheduleViewController.swift in Sources */,
 				10A537FA1A966B1E00FC75C3 /* ViewController.swift in Sources */,
 				10A537F81A966B1E00FC75C3 /* AppDelegate.swift in Sources */,
 				10A538181A966B8D00FC75C3 /* MailboxViewController.swift in Sources */,
@@ -409,6 +413,7 @@
 				10A538131A966B1E00FC75C3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		10A538141A966B1E00FC75C3 /* Build configuration list for PBXNativeTarget "MailboxishTests" */ = {
 			isa = XCConfigurationList;
@@ -417,6 +422,7 @@
 				10A538161A966B1E00FC75C3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

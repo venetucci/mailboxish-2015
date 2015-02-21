@@ -10,6 +10,7 @@ import UIKit
 
 class MailboxViewController: UIViewController {
 
+    @IBOutlet weak var rescheduleView: UIView!
     @IBOutlet weak var imageFeed: UIImageView!
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var singleMessageView: UIView!
@@ -25,6 +26,11 @@ class MailboxViewController: UIViewController {
         super.viewDidLoad()
 
         scrollView.contentSize = imageFeed.frame.size
+        rescheduleView.alpha = 0
+        
+        var edgePan = UIScreenEdgePanGestureRecognizer(target: self, action: "didPanFromEdge:")
+        edgePan.edges = .Left
+        scrollView.addGestureRecognizer(edgePan)
         
         // Do any additional setup after loading the view.
     }
@@ -45,6 +51,7 @@ class MailboxViewController: UIViewController {
     }
     */
 
+    
     @IBAction func didPanMessage(sender: UIPanGestureRecognizer) {
         var translation = sender.translationInView(view)
         var newMessagePoint = singleMessageView.frame.origin
@@ -94,25 +101,34 @@ class MailboxViewController: UIViewController {
                     self.singleMessageView.frame.origin.x = targetX
                 }, completion: { (completed: Bool) -> Void in
                     if newMessagePoint.x <= -60 && newMessagePoint.x > -260 {
-                        self.performSegueWithIdentifier("rescheduleSegue", sender: self)
-                    }
-                } )
-            
-            
-//            if velocity.x > 0 {
-//                println("0")
-//                singleMessageView.frame.origin.x = 220
-//            } else if velocity.x < 0 {
-//                println("middle")
-//                singleMessageView.frame.origin.x = 160
-//            } else if location.x > 60 {
-//                println("location")
-//                singleMessageView.frame.origin.x = 300
-//            } else {
-//                println("x")
-//                singleMessageView.frame.origin.x = startingMessageXPosition + 20
-//            }
-        }
+                        
+                            self.rescheduleView.alpha = 1.0
+                        }
+                    } )
+            }
         sender.setTranslation(CGPointZero, inView: view)
     }
+    
+    @IBAction func rescheduleTapGesture(sender: AnyObject) {
+        UIView.animateWithDuration(0.3, animations: { () -> Void in
+            self.rescheduleView.alpha = 0.0
+        }) { (completed) -> Void in
+            self.removeSingleMessageView()
+        }
+    }
+    
+    func removeSingleMessageView() {
+        imageFeed.frame.origin.y -= singleMessageView.frame.size.height
+    }
+    
+    func didPanFromEdge(gesture: UIScreenEdgePanGestureRecognizer) {
+        var translation = gesture.translationInView(view)
+        
+        if gesture.state == .Began || gesture.state == .Changed {
+                scrollView.frame.origin.x = translation.x
+        } else if (gesture.state == UIGestureRecognizerState.Ended) {
+        }
+    }
+    
+    
 }
